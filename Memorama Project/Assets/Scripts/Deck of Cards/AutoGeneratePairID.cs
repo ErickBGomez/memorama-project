@@ -12,21 +12,24 @@ public class AutoGeneratePairID : MonoBehaviour
 {
     #region Variables
 
-    public CardBehaviour actualCard;
+    int randomPairID;
 
-    public List<Transform> unpairedCards = new List<Transform>();
-    public List<Transform> pairedCards = new List<Transform>();
+    Transform[] allCards;
 
     #endregion
 
     #region Unity Methods
 
-    void Start()
+    void OnEnable()
     {
-        foreach(Transform e in GetComponent<CountAllCards>().cards)
-            unpairedCards.Add(e);
+        allCards = GetComponent<CountAllCards>().cards;
 
+        foreach(Transform card in allCards)
+        {
+            randomPairID = Random.Range(0, allCards.Length / 2);
 
+            card.GetComponent<CardInfo>().pairID = randomPairID;
+        }
     }
 
     #endregion

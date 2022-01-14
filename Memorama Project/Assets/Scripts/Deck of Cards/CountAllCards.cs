@@ -27,8 +27,6 @@ public class CountAllCards : MonoBehaviour
         cards = Array.FindAll(GetComponentsInChildren<Transform>(), card => card.tag == "Card");
 
         // Si el link anterior se pierde, mejor buscar el tema "Lambda expression"
-
-        Debug.Log(cards.Length);
     }
 
     #endregion

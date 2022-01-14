@@ -11,7 +11,7 @@ public class AutoArrangeDeckOfCards : MonoBehaviour
 {
     #region Variables
 
-    Transform[] totalCards;
+    Transform[] allCards;
 
     [Range(1f, 3f)] public float distanceBetweenCards;
 
@@ -24,7 +24,7 @@ public class AutoArrangeDeckOfCards : MonoBehaviour
     void Start()
     {
         // Tomar el mazo de cartas guardados en la clase "CountAllCards"
-        totalCards = GetComponent<CountAllCards>().cards;
+        allCards = GetComponent<CountAllCards>().cards;
 
 
         // Calcular las columnas y filas
@@ -33,16 +33,16 @@ public class AutoArrangeDeckOfCards : MonoBehaviour
         
 
         // Reordenar todos los children (por cuestiones de seguridad)
-        foreach (Transform card in totalCards)
+        foreach (Transform card in allCards)
         {
             card.position = this.transform.position;
         }
 
         // Verificar si la cantidad de cartas total es par
-        if (totalCards.Length % 2 == 0)
+        if (allCards.Length % 2 == 0)
         {
             // Verificar si los elementos encajan en el mazo correctamente
-            if (columns * rows == totalCards.Length)
+            if (columns * rows == allCards.Length)
             {
 
                 // Separar objetos
@@ -61,7 +61,7 @@ public class AutoArrangeDeckOfCards : MonoBehaviour
                     {
                         // Usamos "k" en children porque no se reiniciará su valor cuando se sale del bucle
                         // -yRow porque queremos que el cálculo de la altura sea hacia abajo
-                        totalCards[k].position = new Vector2(distanceBetweenCards * j, -yRow);
+                        allCards[k].position = new Vector2(distanceBetweenCards * j, -yRow);
                         k++;
                     }
                 }
@@ -89,9 +89,9 @@ public class AutoArrangeDeckOfCards : MonoBehaviour
     void CalculateColumnsAndRows()
     {
         // Raíz cuadrada de la cantidad de elementos presentes para poder hacer el cálculo del cuadrado o rectángulo
-        rows = (int)Mathf.Sqrt(totalCards.Length);
+        rows = (int)Mathf.Sqrt(allCards.Length);
         // El resultado de la raíz anterior será usado en la división entre el número de elementos presentes entre la raíz, así podemos encajar cada elemento en cuadros ordenados
-        columns = totalCards.Length / rows;
+        columns = allCards.Length / rows;
 
         Debug.Log($"Columns: {columns}, Rows: {rows}");
     }
