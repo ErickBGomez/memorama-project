@@ -12,9 +12,9 @@ public class AutoGeneratePairID : MonoBehaviour
 {
     #region Variables
 
-    Transform[] totalCards;
     public CardBehaviour actualCard;
 
+    public List<Transform> unpairedCards = new List<Transform>();
     public List<Transform> pairedCards = new List<Transform>();
 
     #endregion
@@ -23,14 +23,10 @@ public class AutoGeneratePairID : MonoBehaviour
 
     void Start()
     {
-        // Acceder a las cartas registradas en el mazo
-        totalCards = GetComponent<CountAllCards>().cards;
+        foreach(Transform e in GetComponent<CountAllCards>().cards)
+            unpairedCards.Add(e);
 
-        // Tomar una carta aleatoria
-        // Error: El indez de totalCards es igual a 0.
-        Debug.Log(totalCards.Length);
 
-        actualCard = totalCards[Random.Range(0, totalCards.Length - 1)].GetComponent<CardBehaviour>();
     }
 
     #endregion

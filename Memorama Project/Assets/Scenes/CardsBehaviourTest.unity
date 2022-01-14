@@ -859,8 +859,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distanceBetweenCards: 1.75
-  columns: 0
-  rows: 0
+  columns: 1
+  rows: 1
 --- !u!114 &318321819
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -887,6 +887,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   actualCard: {fileID: 0}
+  unpairedCards: []
   pairedCards: []
 --- !u!1 &335336273
 GameObject:

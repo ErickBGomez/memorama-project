@@ -93,11 +93,6 @@ public class AutoArrangeDeckOfCards : MonoBehaviour
         // El resultado de la raíz anterior será usado en la división entre el número de elementos presentes entre la raíz, así podemos encajar cada elemento en cuadros ordenados
         columns = totalCards.Length / rows;
 
-        PrintInfo();
-    }
-
-    void PrintInfo()
-    {
         Debug.Log($"Columns: {columns}, Rows: {rows}");
     }
 

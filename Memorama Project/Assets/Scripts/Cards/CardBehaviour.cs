@@ -62,7 +62,7 @@ public class CardBehaviour : MonoBehaviour
     // Estado actual: Falta hacer que las cartas regresen a su lugar una vez que hayan sido analizadas
 
     #endregion
-
+    
     #region Public Methods
 
     // El evento de pasar el número de par es activado cuando la animación "CardShowFlip.anim" termina
