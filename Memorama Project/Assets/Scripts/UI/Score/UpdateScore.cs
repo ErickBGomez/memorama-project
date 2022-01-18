@@ -14,7 +14,7 @@ public class UpdateScore : MonoBehaviour
 
     public int score;
 
-    TextMeshProUGUI text;
+    TextMeshProUGUI scoreText;
 
     #endregion
 
@@ -22,7 +22,7 @@ public class UpdateScore : MonoBehaviour
 
     void Start()
     {
-        text = GetComponent<TextMeshProUGUI>();
+        scoreText = GetComponent<TextMeshProUGUI>();
 
         score = 0;
 
@@ -37,7 +37,7 @@ public class UpdateScore : MonoBehaviour
     {
         score += addScore;
 
-        text.text = score.ToString();
+        scoreText.text = score.ToString();
     }
 
 
