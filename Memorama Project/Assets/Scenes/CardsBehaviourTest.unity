@@ -807,6 +807,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Card (14)
       objectReference: {fileID: 0}
+    - target: {fileID: 7844202148939927197, guid: 8a2ed813e099f0e42be48aaadeb8f891, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7844202148939927265, guid: 8a2ed813e099f0e42be48aaadeb8f891, type: 3}
       propertyPath: m_RootOrder
       value: 14
@@ -2701,6 +2705,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Card (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 7844202148939927197, guid: 8a2ed813e099f0e42be48aaadeb8f891, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7844202148939927265, guid: 8a2ed813e099f0e42be48aaadeb8f891, type: 3}
       propertyPath: m_RootOrder
       value: 12
@@ -3158,6 +3166,10 @@ PrefabInstance:
     - target: {fileID: 7844202148939927197, guid: 8a2ed813e099f0e42be48aaadeb8f891, type: 3}
       propertyPath: m_Name
       value: Card (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7844202148939927197, guid: 8a2ed813e099f0e42be48aaadeb8f891, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7844202148939927265, guid: 8a2ed813e099f0e42be48aaadeb8f891, type: 3}
       propertyPath: m_RootOrder
@@ -4103,6 +4115,10 @@ PrefabInstance:
     - target: {fileID: 7844202148939927197, guid: 8a2ed813e099f0e42be48aaadeb8f891, type: 3}
       propertyPath: m_Name
       value: Card (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7844202148939927197, guid: 8a2ed813e099f0e42be48aaadeb8f891, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7844202148939927265, guid: 8a2ed813e099f0e42be48aaadeb8f891, type: 3}
       propertyPath: m_RootOrder

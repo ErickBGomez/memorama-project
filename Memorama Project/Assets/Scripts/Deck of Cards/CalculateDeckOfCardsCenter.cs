@@ -18,7 +18,6 @@ public class CalculateDeckOfCardsCenter : MonoBehaviour
     // Obtener todas las cartas del mazo
     Transform[] allCards;
 
-
     #endregion
 
     #region Unity Methods
