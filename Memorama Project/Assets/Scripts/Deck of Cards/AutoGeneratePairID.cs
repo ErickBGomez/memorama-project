@@ -12,15 +12,20 @@ public class AutoGeneratePairID : MonoBehaviour
 {
     #region Variables
 
-    int randomPairID;
-
     Transform[] allCards;
 
-
+    // Variable que nos ayuda a poder bloquear cuando se encuentran cartas repetidas en la selección aleatoria
     bool isCardRepeated;
+    // Nos ayuda a guardar el valor aleatorio en el que se eligen las cartas
     int randomIndex;
+    // Nos ayuda a poder guarda la carta que ha sido seleccionada y así lo podemos comparar en la lista para ver si existe o no
     Transform cardSelected;
-    public List<Transform> allCards2 = new List<Transform>();
+    // Nos ayuda a poder alternar el valor del PairID, aumentándolo de valor por cada 2 veces que se pasa en el bucle. Tanto éste y la siguiente variable empiezan en -1 para poder empezar con el bucle de alternar valores
+    int alternatePairIDModule = -1;
+    // Establece el nuevo PairID para la carta
+    int newPairID = -1;
+    // Lista de cartas mezcladas
+    public List<Transform> shuffledCardsList = new List<Transform>();
 
 
     #endregion
@@ -31,19 +36,9 @@ public class AutoGeneratePairID : MonoBehaviour
     {
         // Conseguir referencia del mazo
         allCards = GetComponent<CountAllCards>().cards;
-
-        /*
-        // Agregar aleatoriamente el índice de las cartas
-        foreach(Transform card in allCards)
-        {
-            randomPairID = Random.Range(0, allCards.Length / 2);
-
-            card.GetComponent<CardInfo>().pairID = randomPairID;
-        }*/
-                
-
-
-        while (allCards2.Count < allCards.Length)
+        
+        // Seleccionar las cartas de forma aleatoria
+        while (shuffledCardsList.Count < allCards.Length)
         {
             // Iniciamos con false, ya que el bucle se tiene que reiniciar
             isCardRepeated = false;
@@ -55,9 +50,9 @@ public class AutoGeneratePairID : MonoBehaviour
             cardSelected = allCards[randomIndex];
 
             // Verificar si no existe en el mazo
-            foreach (Transform card in allCards2)
+            foreach (Transform card in shuffledCardsList)
             {
-                // Si la carta existe en allCards2, terminar el bucle foreach
+                // Si la carta existe en shuffledCardsList, terminar el bucle foreach
                 if (cardSelected == card)
                 {
                     isCardRepeated = true;
@@ -66,24 +61,23 @@ public class AutoGeneratePairID : MonoBehaviour
                 }
             }
 
-            // Si no existe: Agregar carta
+            // Si la carta no existe: Agregar carta a shuffledCardsList
             if (!isCardRepeated)
-                allCards2.Add(cardSelected);
+            {
+                // Seleccionar el nuevo PairID, alternando su valor cada dos veces que se pasa en esta condicional
+                alternatePairIDModule++;
 
+                if (alternatePairIDModule%2 == 0)
+                    newPairID++;
+
+                // Agregar la carta en la lista mezclada
+                shuffledCardsList.Add(cardSelected);
+
+                // Escoger el nuevo PairID para la última carta guardada en shuffledCardsList
+                shuffledCardsList[shuffledCardsList.Count - 1].gameObject.GetComponent<CardInfo>().pairID = newPairID;
+            }
         }
-        
-
-        // Establecer el número del PairID (dos veces el mismo valor, luego, aumentar ++)
-
-
-
     }
-
-    #endregion
-
-    #region Private Methods
-
-
 
     #endregion
 }
