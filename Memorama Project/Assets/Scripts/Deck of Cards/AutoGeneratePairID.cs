@@ -74,7 +74,7 @@ public class AutoGeneratePairID : MonoBehaviour
                 shuffledCardsList.Add(cardSelected);
 
                 // Escoger el nuevo PairID para la última carta guardada en shuffledCardsList
-                shuffledCardsList[shuffledCardsList.Count - 1].gameObject.GetComponent<CardInfo>().pairID = newPairID;
+                shuffledCardsList[shuffledCardsList.Count - 1].GetComponent<CardInfo>().pairID = newPairID;
             }
         }
     }
