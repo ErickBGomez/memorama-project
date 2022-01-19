@@ -41,6 +41,7 @@ public class ControlsManager : MonoBehaviour
     public void ShowOrHidePauseMenu(bool boolValue)
     {
         pauseMenuUI.SetActive(boolValue);
+        pauseMenuUI.GetComponent<WindowParameters>().SetWindowActive(boolValue);
 
         if (DisableActionsOnPauseMenu != null)
             DisableActionsOnPauseMenu(!boolValue);

@@ -38,7 +38,7 @@ public class Testing : MonoBehaviour
         }
         else
         {
-            value = 0;
+            value = 0f;
         }
 
         if (value >= holdDuration)

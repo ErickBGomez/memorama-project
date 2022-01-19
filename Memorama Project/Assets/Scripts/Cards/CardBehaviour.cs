@@ -103,8 +103,6 @@ public class CardBehaviour : MonoBehaviour
     // Es llamado cuando el evento de "Pausa" es activado o desactivado. Esto evita que se puedan tocar las cartas cuando está el menú activado
     void DisableCollider(bool boolValue)
     {
-        Debug.Log("Llamado");
-
         boxCollider.enabled = boolValue;
     }
 
