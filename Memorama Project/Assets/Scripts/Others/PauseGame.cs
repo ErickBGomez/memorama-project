@@ -18,65 +18,31 @@ public class PauseGame : MonoBehaviour
 
     #region Variables
 
+    [Header("Pause")]
+    [SerializeField] GameObject pauseMenu;
 
-
-    #endregion
-
-    #region Unity Methods
-
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-        
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        
-    }
+    [Header("Set Groups Interactuable")]
+    [SerializeField] CanvasGroup pauseButtonGroup;
+    [SerializeField] CanvasGroup resetButtonGroup;
 
     #endregion
+
 
     #region Public Methods
 
-
-
-    #endregion
-
-    #region Private Methods
-
-    void SetPause(bool isPaused)
+    public void SetPause(bool isPaused)
     {
         if (isPaused)
             Time.timeScale = 0;
         else
             Time.timeScale = 1;
 
+        pauseMenu.SetActive(isPaused);
+        pauseButtonGroup.interactable = !isPaused;
+        resetButtonGroup.interactable = !isPaused;
+
         if (SetCardCollider != null)
             SetCardCollider(!isPaused);
-    }
-
-    #endregion
-
-    #region Subscribe and Unsubscribe Events
-
-    private void OnEnable()
-    {
-        
-    }
-
-    private void OnDisable()
-    {
-        
     }
 
     #endregion
