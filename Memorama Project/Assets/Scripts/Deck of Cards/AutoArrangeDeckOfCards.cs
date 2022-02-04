@@ -70,13 +70,13 @@ public class AutoArrangeDeckOfCards : MonoBehaviour
             else
             {
                 // En el caso que se tenga un número de elementos que no cuadran perfectamente, mostrar este mensaje de error
-                Debug.LogError("Se ha identificado un número de elementos que no cuadran en la cuadrícula del mazo. Por favor, ingrese otra cantidad de cartas");
+                DebugMessages.ErrorMessage("Se ha identificado un número de elementos que no cuadran en la cuadrícula del mazo. Por favor, ingrese otra cantidad de cartas");
             }
         }
         else
         {
             // En el caso que la cantidad de cartas no sea par, mostrar este mensaje de error
-            Debug.LogError("Se ha detectado que la cantidad total de cartas no es par. Reingrese el número de cartas e inténtelo nuevamente");
+            DebugMessages.ErrorMessage("Se ha detectado que la cantidad total de cartas no es par. Reingrese el número de cartas e inténtelo nuevamente");
         }
     }
 
