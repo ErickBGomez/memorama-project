@@ -12,8 +12,6 @@ public class CardPairIDCheck : MonoBehaviour
 {
     #region Variables
 
-    bool value;
-
     [Header("List of cards")]
     public List<CardBehaviour> cards = new List<CardBehaviour>();
 
