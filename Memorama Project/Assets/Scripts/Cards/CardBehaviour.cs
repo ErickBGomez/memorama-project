@@ -102,7 +102,7 @@ public class CardBehaviour : MonoBehaviour
 
     void SetEnableCard(bool isEnable)
     {
-        boxCollider.
+        boxCollider.enabled = isEnable;
     }
 
     #endregion
@@ -111,12 +111,12 @@ public class CardBehaviour : MonoBehaviour
 
     private void OnEnable()
     {
-
+        PauseGame.SetCardCollider += SetEnableCard;
     }
 
     private void OnDisable()
     {
-
+        PauseGame.SetCardCollider -= SetEnableCard;
     }
 
     #endregion
