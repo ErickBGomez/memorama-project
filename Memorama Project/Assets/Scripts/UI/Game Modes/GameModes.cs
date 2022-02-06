@@ -17,11 +17,6 @@ public class GameModes : MonoBehaviour
 
     #region Public Methods
 
-    public void Starta()
-    {
-        
-    }
-
     public void StartGameMode(int gameMode)
     {
         
